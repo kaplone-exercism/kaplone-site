@@ -1,0 +1,129 @@
+@(niveau: String, table: List[String], practices: List[String], niveaux: List[String])
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="utf-8" />
+<title>sans titre</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Ajouts de mise en page -->
+<style type="text/css">
+  h4 {
+     margin-left: 2.75em;
+  }
+  #niveaux {
+     width: 400px;
+     margin-top: 2em;
+     margin-left: 2.75em;
+  }
+  .info {
+     color: grey;
+  }
+  ol {
+     width: 500px;
+  }
+  #bloc_G {
+     float: left;
+  }  
+  #bloc_D {
+     float: left;
+     margin-left: 20px;
+  }
+  #capture {
+    margin-top: 75px;
+    width: 600px;
+    height: auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border:1px solid #021a40;
+    
+  }
+</style>
+
+<script>
+
+  function changeDePage() {
+    var page_ = document.forms[0].niveaux.value;
+    
+    location.replace(page_);
+  }  
+
+</script>
+
+</head>
+
+<body>
+
+@import java.math.BigInteger; var compteur=1;
+
+<form class="form-horizontal">
+<fieldset>
+<div class="form-group">
+  <div class="col-md-4">
+  <select id="niveaux" name="niveaux" class="form-control" onchange="changeDePage()">
+    @if(niveau == ""){
+       <option class="info" value="">Selectionner un niveau a afficher</option>
+    }
+    <option disabled>Les practices ...</option>
+    @for(p <- practices){
+        @if(p == niveau){
+           <option value="@p" selected>@p</option>
+        } else {
+           <option value="@p">@p</option>
+        }
+    }
+    <option disabled>Les niveaux ...</option>
+    @for(n <- niveaux){
+        @if(n == niveau){
+           <option value="@n" selected>@n</option>
+        } else {
+           <option value="@n">@n</option>
+        }     
+    }
+  </select>
+  </div>
+</div>
+</fieldset>
+</form>
+
+@if(niveau != ""){
+  <h4>10 meilleurs scores pour le niveau : <b>@niveau</b></h4>
+  <div id="bloc_G">
+  <ol>
+  @for(t <- table){
+     @if(compteur < 10){
+         <li><pre><b>@compteur</b>  : @t</pre></li>   
+     } else {
+         <li><pre><b>@compteur</b> : @t</pre></li>
+     }
+     @(compteur+=1)
+  }
+  @for(index <- compteur until 11){
+     @if(index < 10){
+       <li><pre><b>@index</b>  : </pre></li>
+     } else {
+       <li><pre><b>@index</b> : </pre></li>
+     }
+  } 
+  </ol>
+  </div>
+  <div id="bloc_D">
+    @defining("/assets/images/" + niveau + ".png") { chemin =>
+    <img id="capture" src=@chemin}>
+  </div>
+  
+}
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+@(niveau: String, table: List[String])
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="utf-8" />
+<title>sans titre</title>
+<meta name="generator" content="Geany 1.29" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Ajouts de mise en page -->
+<style type="text/css">
+  h2 {
+     margin-left: 4em;
+  }
+</style>
+</head>
+
+<body>
+<h2>Meilleurs scores pour le niveau : <b>@niveau</b></h2>
+<ol>
+@import java.math.BigInteger; var compteur=1
+@for(t <- table){
+   @if(compteur < 10){
+       <li><pre><b>@compteur</b>  : @t</pre></li>   
+   } else {
+       <li><pre><b>@compteur</b> : @t</pre></li>
+   }
+   @(compteur+=1)
+}
+</ol>
+</body>
+
+</html>
