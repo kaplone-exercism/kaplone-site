@@ -19,7 +19,7 @@ public class Application extends Controller {
 //        return ok(index.render("Your new application is ready."));
 //    }
     public Result index() {
-        return ok("<h1>Serveur is up !</h1>");
+        return ok("<h3>Serveur is up !</h3>").as("text/html");
     }
 
     public Result ajoutScore(String user) {
