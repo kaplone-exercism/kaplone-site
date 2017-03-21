@@ -26,20 +26,17 @@ public class ControleurCV extends Controller {
 
     public Result afficher(String article) {
 
-//       Articles a = null;
-//
-//       try {
-//           a = Articles.valueOf(article);
-//       }
-//       catch (IllegalArgumentException iae){
-//           a = Articles.valueOf("architecte");
-//       }
+        String res;
 
-       // http://www.kaplone.fr/assets/articles/
+        try {
+            res = new String(Files.readAllBytes(environment.getFile(String.format("/public/articles/%s.html")).toPath()));
+        }
+        catch (IOException ioe){
+            res = "<h1> Erreur </h1>";
+        }
 
        return ok(main.render(article,
-              // Html.apply(a.getFileContent())));
-               Html.apply(new String(Files.readAllBytes(environment.getFile(String.format("/public/articles/%s.html")).toPath())))));
+               Html.apply(res)));
 
     }
 }
