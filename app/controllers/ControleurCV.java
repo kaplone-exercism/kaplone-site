@@ -18,7 +18,10 @@ import play.twirl.api.Html;
 
 public class ControleurCV extends Controller {
 
-   public Result afficher(String article) {
+    @Inject
+    private Environment environment;
+
+    public Result afficher(String article) {
 
 //       Articles a = null;
 //
@@ -33,7 +36,7 @@ public class ControleurCV extends Controller {
 
        return ok(main.render(article,
               // Html.apply(a.getFileContent())));
-               Html.apply(new String(Files.readAllBytes(DefaultApplication.getFile(String.format("/public/articles/%s.html")).toPath())))));
+               Html.apply(new String(Files.readAllBytes(environment.getFile(String.format("/public/articles/%s.html")).toPath())))));
 
     }
 }
