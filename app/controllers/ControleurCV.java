@@ -12,7 +12,6 @@ import play.mvc.*;
 import play.mvc.Http.*;
 
 import views.html.*;
-//import enums.*;
 
 import java.nio.file.*;
 import java.io.*;
@@ -29,7 +28,7 @@ public class ControleurCV extends Controller {
         String res;
 
         try {
-            res = new String(Files.readAllBytes(environment.getFile(String.format("/public/articles/%s.html")).toPath()));
+            res = new String(Files.readAllBytes(environment.getFile(String.format("/public/articles/%s.html", article)).toPath()));
         }
         catch (IOException ioe){
             res = "<h1> Erreur </h1>";
