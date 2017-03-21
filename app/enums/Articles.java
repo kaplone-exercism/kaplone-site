@@ -3,6 +3,8 @@ package enums;
 import java.nio.file.*;
 import java.io.*;
 
+import play.*;
+
 public enum Articles {
 
     architecte("/public/articles/architecte.html"),
@@ -20,7 +22,7 @@ public enum Articles {
         String res = "";
 
         try {
-            res = new String(Files.readAllBytes(Play.application().getFile(this.file).toPath()));
+            res = new String(Files.readAllBytes(Application().getFile(this.file).toPath()));
         }
         catch (IOException ioe){
         }
