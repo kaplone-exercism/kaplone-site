@@ -4,8 +4,8 @@ import java.util.*;
 
 public enum Articles {
 
-    architecte ("architecte.html"),
-    analyste ("analyste.html"),
+    architecte("architecte.html"),
+    analyste("analyste.html"),
     avant("avant.html");
 
     private String file;
@@ -17,8 +17,4 @@ public enum Articles {
     public String getFileName(){
         return this.file;
     }
-
-//    public String getFileContent(){
-//        return new String(Files.readAllBytes(Paths.get(this.file)));
-//    }
 }
