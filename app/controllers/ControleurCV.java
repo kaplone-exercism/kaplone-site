@@ -38,6 +38,9 @@ public class ControleurCV extends Controller {
         }
         catch (IOException ioe){
             contenuArticle = "<h1> Erreur </h1>";
+            header = "";
+            footer = "";
+            leftMenu = "";
         }
 
        return ok(main.render(article,
