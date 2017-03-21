@@ -22,7 +22,7 @@ public enum Articles {
         String res = "";
 
         try {
-            res = new String(Files.readAllBytes(Application().getFile(this.file).toPath()));
+            res = new String(Files.readAllBytes(Application.getFile(this.file).toPath()));
         }
         catch (IOException ioe){
         }
