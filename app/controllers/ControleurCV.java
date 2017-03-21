@@ -27,7 +27,7 @@ public class ControleurCV extends Controller {
            a = Articles.valueOf("architecte");
        }
 
-       return ok(main.render(article, a.getFileName()));
+       return ok(main.render(article, ok(a.getFileContent()).as("text/html"));
 
     }
 }

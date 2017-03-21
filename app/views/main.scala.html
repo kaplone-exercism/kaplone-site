@@ -1,4 +1,4 @@
-@(title: String)(content: String)
+@(title: String)(content: Html)
 
 <!DOCTYPE html>
 
@@ -39,7 +39,7 @@
         </aside>
 
         <article id="includedContent">
-            <embed type="text/html" src="@routes.Assets.versioned("articles/"@content"")" width="800" height="600">
+            @content
         </article>
     </article>
     <footer>
