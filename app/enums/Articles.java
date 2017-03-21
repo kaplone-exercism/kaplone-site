@@ -6,9 +6,9 @@ import java.io.*;
 
 public enum Articles {
 
-    architecte("articles/architecte.html"),
-    analyste("articles/analyste.html"),
-    avant("articles/avant.html");
+    architecte("/public/articles/architecte.html"),
+    analyste("/public/articles/analyste.html"),
+    avant("/public/articles/avant.html");
 
     private String file;
 
