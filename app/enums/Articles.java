@@ -1,6 +1,5 @@
 package enums;
 
-import java.util.*;
 import java.nio.file.*;
 import java.io.*;
 
@@ -16,16 +15,12 @@ public enum Articles {
         this.file = s;
     }
 
-    public String getFileName(){
-        return this.file;
-    }
-
     public String getFileContent(){
 
         String res = "";
 
         try {
-            res = new String(Files.readAllBytes(Paths.get(this.file)));
+            res = new String(Files.readAllBytes(Play.application().getFile(this.file).toPath()));
         }
         catch (IOException ioe){
         }

@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String)(contenu: Html)
 
 <!DOCTYPE html>
 
@@ -31,19 +31,19 @@
 
     <body>
     <header>
-        <embed class="embeded" type="text/html" src="@routes.Assets.versioned("html/top.html")" height="70">
+        <embed class="embeded" type="text/html" src="@routes.Assets.versioned("html/top.html")" height="70"></embed>
     </header>
     <article id="contenu">
-        <aside>
-            <embed type="text/html" src="@routes.Assets.versioned("html/leftColumn.html")" width="350" height="800">
+        <embed>
+            <embed type="text/html" src="@routes.Assets.versioned("html/leftColumn.html")" width="350" height="800"></embed>
         </aside>
 
         <article id="includedContent">
-            @content
+            @contenu
         </article>
     </article>
     <footer>
-        <embed class="embeded" type="text/html" src="@routes.Assets.versioned("html/bottom.html")" height="70">
+        <embed class="embeded" type="text/html" src="@routes.Assets.versioned("html/bottom.html")" height="70"></embed>
     </footer>
     </body>
 </html>

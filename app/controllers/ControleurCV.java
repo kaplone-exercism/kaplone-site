@@ -20,16 +20,19 @@ public class ControleurCV extends Controller {
 
    public Result afficher(String article) {
 
-       Articles a = null;
+//       Articles a = null;
+//
+//       try {
+//           a = Articles.valueOf(article);
+//       }
+//       catch (IllegalArgumentException iae){
+//           a = Articles.valueOf("architecte");
+//       }
 
-       try {
-           a = Articles.valueOf(article);
-       }
-       catch (IllegalArgumentException iae){
-           a = Articles.valueOf("architecte");
-       }
+       // http://www.kaplone.fr/assets/articles/
 
-       return ok(main.render(article, Html.apply(a.getFileContent())));
+       return ok(main.render(article,
+               Html.apply(a.getFileContent())));
 
     }
 }
