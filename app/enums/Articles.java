@@ -1,7 +1,5 @@
 package enums;
 
-import java.util.*;
-
 public enum Articles {
 
     architecte("architecte.html"),

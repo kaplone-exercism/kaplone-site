@@ -18,7 +18,7 @@ public class ControleurCV extends Controller {
 
    public Result afficher(String article) {
 
-       Article a = null;
+       Articles a = null;
 
        try {
            a = Articles.valueOf(article);
