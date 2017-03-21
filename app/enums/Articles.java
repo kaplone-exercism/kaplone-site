@@ -21,6 +21,15 @@ public enum Articles {
     }
 
     public String getFileContent(){
-        return new String(Files.readAllBytes(Paths.get(this.file)));
+
+        String res = "";
+
+        try {
+            res = new String(Files.readAllBytes(Paths.get(this.file)));
+        }
+        catch (IOException ioe){
+        }
+
+        return res;
     }
 }
