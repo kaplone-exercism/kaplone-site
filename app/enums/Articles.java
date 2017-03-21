@@ -8,7 +8,7 @@ public enum Articles {
     analyste("analyste.html"),
     avant("avant.html");
 
-    private String file;
+    private final String file;
 
     Articles(String s){
         this.file = s;

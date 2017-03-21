@@ -18,14 +18,16 @@ public class ControleurCV extends Controller {
 
    public Result afficher(String article) {
 
+       Article a = null;
+
        try {
-           Articles a = Articles.valueOf(article);
+           a = Articles.valueOf(article);
        }
        catch (IllegalArgumentException iae){
-           Articles a = Articles.valueOf("architecte");
+           a = Articles.valueOf("architecte");
        }
 
-       return ok(main.render(article, Articles.valueOf(article).getFileName()));
+       return ok(main.render(article, a.getFileName()));
 
     }
 }
