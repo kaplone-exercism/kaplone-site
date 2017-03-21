@@ -4,8 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET     /scores                     controllers.Default.redirect(to = "http://www.kaplone.fr/scores/")
-GET     /scores/                    controllers.ControleurResultats.afficherResultats(niveau = "")
+GET     /scores                     controllers.ControleurResultats.afficherResultats(niveau = "")
 GET     /scores/:niveau             controllers.ControleurResultats.afficherResultats(niveau: String)
 
 #switch to api routes
