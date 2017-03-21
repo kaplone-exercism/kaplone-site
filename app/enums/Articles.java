@@ -21,11 +21,11 @@ public enum Articles {
 
         String res = "";
 
-        try {
-            res = new String(Files.readAllBytes(DefaultApplication.getFile(this.file).toPath()));
-        }
-        catch (IOException ioe){
-        }
+//        try {
+//            res = new String(Files.readAllBytes(DefaultApplication.getFile(this.file).toPath()));
+//        }
+//        catch (IOException ioe){
+//        }
 
         System.out.println("Depuis le fichier : " + res);
 
