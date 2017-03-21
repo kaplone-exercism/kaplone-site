@@ -6,9 +6,9 @@ import java.io.*;
 
 public enum Articles {
 
-    architecte("architecte.html"),
-    analyste("analyste.html"),
-    avant("avant.html");
+    architecte("articles/architecte.html"),
+    analyste("articles/analyste.html"),
+    avant("articles/avant.html");
 
     private String file;
 
@@ -29,6 +29,8 @@ public enum Articles {
         }
         catch (IOException ioe){
         }
+
+        System.out.println("Depuis le fichier : " + res)
 
         return res;
     }
