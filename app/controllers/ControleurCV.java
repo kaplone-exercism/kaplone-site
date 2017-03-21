@@ -20,14 +20,14 @@ public class ControleurCV extends Controller {
 
    public Result afficher(String article) {
 
-//       Articles a = null;
-//
-//       try {
-//           a = Articles.valueOf(article);
-//       }
-//       catch (IllegalArgumentException iae){
-//           a = Articles.valueOf("architecte");
-//       }
+       Articles a = null;
+
+       try {
+           a = Articles.valueOf(article);
+       }
+       catch (IllegalArgumentException iae){
+           a = Articles.valueOf("architecte");
+       }
 
        // http://www.kaplone.fr/assets/articles/
 
