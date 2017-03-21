@@ -30,7 +30,7 @@ public enum Articles {
         catch (IOException ioe){
         }
 
-        System.out.println("Depuis le fichier : " + res)
+        System.out.println("Depuis le fichier : " + res);
 
         return res;
     }
