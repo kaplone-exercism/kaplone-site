@@ -1,15 +1,49 @@
-@(title: String)(content: Html)
+@(title: String)(content: String)
 
 <!DOCTYPE html>
 
-<html lang="en">
-    <head>
-        <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
-    </head>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CV David Bertrand</title>
+
+<link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/layout.css")">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+!-- Latest compiled JavaScript -->
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://www.w3schools.com/lib/w3data.js"></script>
+
+<meta name="description" content="Une page de présentation">
+
+
+
+ </head>
+
     <body>
-        @content
+    <header>
+        <embed class="embeded" type="text/html" src="@routes.Assets.versioned("html/top.html")" height="70">
+    </header>
+    <article id="contenu">
+        <aside>
+            <embed type="text/html" src="@routes.Assets.versioned("html/leftColumn.html")" width="350" height="800">
+        </aside>
+
+        <article id="includedContent">
+            <embed type="text/html" src=@content width="800" height="600">
+        </article>
+    </article>
+    <footer>
+        <embed class="embeded" type="text/html" src="@routes.Assets.versioned("html/bottom.html")" height="70">
+    </footer>
     </body>
 </html>

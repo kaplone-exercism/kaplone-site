@@ -1,0 +1,35 @@
+header {
+	width:80%;
+	height:50px;
+	margin-left: 10%;
+	margin-bottom: 10px;
+	background-color:#00CED1;
+	}
+article#contenu {
+	width: 100%;
+	height:800px;
+	background-color:#FFFFFF;
+	}
+article#includedContent {
+	float:left;
+	width:800;
+	height:100%;
+	background-color:#FFFFFF;
+	}
+footer {
+	clear:both;
+	width:80%;
+	height:50px;
+	margin-left: 10%; 
+	margin-top: 10px; 
+	background-color:#00CED1;
+	}
+aside {
+	float:left;
+	width:350;
+	height:100%;
+	background-color:#FFFFFF;
+	}
+.embeded {
+    width: 100%;
+   }

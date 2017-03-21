@@ -4,6 +4,8 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+GET     /cv                         controllers.ControleurCV.afficher(article = "")
+GET     /cv/:article                controllers.ControleurCV.afficher(article: String)
 GET     /scores                     controllers.ControleurResultats.afficherResultats(niveau = "")
 GET     /scores/:niveau             controllers.ControleurResultats.afficherResultats(niveau: String)
 
