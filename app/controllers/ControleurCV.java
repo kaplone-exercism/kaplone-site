@@ -14,7 +14,10 @@ import play.mvc.Http.*;
 import views.html.*;
 //import enums.*;
 
+import java.nio.file.*;
+import java.io.*;
 import play.twirl.api.Html;
+import javax.inject.*;
 
 public class ControleurCV extends Controller {
 
