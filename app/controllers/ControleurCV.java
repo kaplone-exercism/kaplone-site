@@ -25,17 +25,26 @@ public class ControleurCV extends Controller {
 
     public Result afficher(String article) {
 
-        String res;
+        String header;
+        String footer;
+        String leftMenu;
+        String contenuArticle;
 
         try {
-            res = new String(Files.readAllBytes(environment.getFile(String.format("/public/articles/%s.html", article)).toPath()));
+            contenuArticle = new String(Files.readAllBytes(environment.getFile(String.format("/public/articles/%s.html", article)).toPath()));
+            header = new String(Files.readAllBytes(environment.getFile("/public/html/top.html").toPath()));
+            footer = new String(Files.readAllBytes(environment.getFile("/public/html/bottom.html").toPath()));
+            leftMenu = new String(Files.readAllBytes(environment.getFile("/public/html/leftColumn.html").toPath()));
         }
         catch (IOException ioe){
-            res = "<h1> Erreur </h1>";
+            contenuArticle = "<h1> Erreur </h1>";
         }
 
        return ok(main.render(article,
-               Html.apply(res)));
+               Html.apply(header),
+               Html.apply(footer),
+               Html.apply(leftMenu),
+               Html.apply(contenuArticle)));
 
     }
 }
