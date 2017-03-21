@@ -14,6 +14,8 @@ import play.mvc.Http.*;
 import views.html.*;
 import enums.*;
 
+import play.twirl.api.Html;
+
 public class ControleurCV extends Controller {
 
    public Result afficher(String article) {
@@ -27,7 +29,7 @@ public class ControleurCV extends Controller {
            a = Articles.valueOf("architecte");
        }
 
-       return ok(main.render(article, ok(a.getFileContent()).as("text/html")));
+       return ok(main.render(article, Html.apply(a.getFileContent())));
 
     }
 }
