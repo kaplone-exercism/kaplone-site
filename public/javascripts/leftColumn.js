@@ -6,9 +6,17 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('ul.tree').click(function () {
-        var out = document.getElementById("scroll");
-        alert(out.scrollTop);
-        out.scrollTop = out.scrollHeight - out.clientHeight;
-        alert(out.scrollTop);
+        var out;
+        var level;
+
+        addEventListener("turbolinks:before-render", function() {
+            out = document.getElementById("scroll");
+            level = out.scrollTop;
+            alert(level);
+        });
+
+        addEventListener("turbolinks:render", function() {
+            out.scrollTop = level;
+        });
     });
 });
