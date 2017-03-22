@@ -6,9 +6,11 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('ul.tree').hide();
+    $('ul.tree').hide(600);
 
-//    $('ul.tree').click(function () {
+    $('ul.tree').click(function () {
+         $(this).parent().children('label.tree-toggler').toggle(600);
+    });
 //        var out;
 //        var level;
 //
