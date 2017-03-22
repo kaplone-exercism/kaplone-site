@@ -9,6 +9,7 @@ $(document).ready(function () {
     $('ul.tree').hide();
 
     $('ul.tree').click(function () {
-        $(this).parent().children('label.tree-toggler')toggle();
+//         $('ul.tree').hide();
+//         $(this).parent().children('label.tree-toggler').toggle(600);
     });
 });
