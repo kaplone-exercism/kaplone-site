@@ -19,10 +19,9 @@ article#includedContent {
 	height:100%;
 	background: repeating-linear-gradient(
                    135deg,
-                   LightSlateGray  5px,
-                   LightGrey  15px
+                   #cfd3e2  5px,
+                   #eff0f5  15px
                  );
-     opacity: 0.3;
 	}
 
 footer {
