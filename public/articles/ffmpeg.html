@@ -7,16 +7,16 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <div class="contenu">
     <p class="pave">
-        Durant mes 9 années passées à <a href="http://www.kaplone.fr/cv/satellite.html">Satellite Multimédia</a> j'ai beaucoup utilisé FFmpeg.
+        Durant mes 9 années passées à <a href="http://www.kaplone.fr/cv/satellite">Satellite Multimédia</a> j'ai beaucoup utilisé FFmpeg.
     </p>
     <p class="pave">
         Dans de nombreux projets, j'avais à analyser, décoder, encoder, transformer, génerer des flux vidéos.<br>
         Les programmes et les scripts s'appuyaient sur FFmpeg, bien sûr, mais également sur :
         <ul class="liste">
-            <li><a href="">Mencoder</a> qui, de façon complémentaire à FFmpeg est parfois plus complet, plus stable ou plus performant.</li>
-            <li><a href="">Mlt</a> pour générer un flux vidéo avec une composition entre les sources.</li>
-            <li><a href="">Sox</a> pour traiter spécifiquement les pistes sonores.</li>
-            <li><a href="">MediaInfo</a> pour accéder aux métadatas des fichiers.</li>
+            <li><a href="http://www.mplayerhq.hu/DOCS/HTML/fr/mencoder.html">Mencoder</a> qui, de façon complémentaire à FFmpeg est parfois plus complet, plus stable ou plus performant.</li>
+            <li><a href="https://www.mltframework.org/features/">Mlt</a> pour générer un flux vidéo avec une composition entre les sources.</li>
+            <li><a href="http://sox.sourceforge.net/soxformat.html">Sox</a> pour traiter spécifiquement les pistes sonores.</li>
+            <li><a href="http://manpages.ubuntu.com/manpages/precise/man1/mediainfo.1.html">MediaInfo</a> pour accéder aux métadatas des fichiers.</li>
         </ul>
     </p>
     <p class="pave">
@@ -33,6 +33,18 @@
             -q:a et -q:v pour la qualité,<br>
             ...<br>
     </code></p>
+    </p>
+    <p class="pave">
+        Une des particularités de FFmpeg est de diriger les informations à afficher sur la console sur STDERR.<br>
+        Le flux généré étant pour sa part sur STDOUT, c'est un comportement rationnel mais qui peut dérouter si on n'y prend pas garde.
+    </p>
+    <p class="pave">
+        Une importante documentation est disponible pour FFmpeg, mais souvent, hélas, seul un usage basique est exposé.<br>
+        Pour comprendre les options les moins documentées, leurs effets, leurs arguments, leurs combinaisons, ...
+        j'ai du mettre en place des protocoles de tests me permettant de mesurer l'impact de ces paramètres sur la qualité et la fiabilité de l'encodage,
+        ainsi que sur les performances que l'on pouvait attendre.<br>
+        La recherche des meilleurs compromis était souvent longue, mais le retour sur investissement le justifiait :
+        la qualité obtenue était vraiment supérieure à celles proposées par les solutions propriétaires.
     </p>
     </div>
 </body>
