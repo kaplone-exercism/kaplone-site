@@ -9,7 +9,7 @@ header {
 article#contenu {
 	width: 100%;
 	height:800px;
-	background-color:#FFFFFF30;
+	background-color:#FFFFFF;
 	}
 
 article#includedContent {
@@ -17,7 +17,12 @@ article#includedContent {
 	margin-left: 2%;
 	width:800;
 	height:100%;
-	background-color:#FFFFFF30;
+	background: repeating-linear-gradient(
+                   135deg,
+                   LightSlateGray  5px,
+                   LightGrey  15px
+                 );
+     opacity: 0.3;
 	}
 
 footer {

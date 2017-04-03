@@ -1,10 +1,6 @@
 body.contenu {
-             background: repeating-linear-gradient(
-               135deg,
-               LightSlateGray  5px,
-               LightGrey  15px
-             );
-             opacity: 0.3;
+             background-color:#FFFFFF;
+             opacity: 0.9;
 }
 
 div.contenu {
@@ -16,13 +12,16 @@ p.pave {
               border-radius: 5px;
               background: BlanchedAlmond ;
               margin: 5px;
+              padding: 5px;
+              opacity: 1;
 }
 
 p.code {
               border: 1px solid LightGrey;
               border-radius: 5px;
               background: White;
-              margin: 5px;
+              padding: 5px;
+              opacity: 1;
 }
 
 ul.liste {
@@ -30,4 +29,5 @@ ul.liste {
               border-radius: 5px;
               background: White;
               margin: 5px;
+              opacity: 1;
 }
