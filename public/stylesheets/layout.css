@@ -9,15 +9,15 @@ header {
 article#contenu {
 	width: 100%;
 	height:800px;
-	background-color:#FFFFFF;
+	background-color:#FFFFFF30;
 	}
 
 article#includedContent {
 	float:left;
-	margin-left: 5%;
+	margin-left: 2%;
 	width:800;
 	height:100%;
-	background-color:#FFFFFF;
+	background-color:#FFFFFF30;
 	}
 
 footer {
@@ -31,6 +31,7 @@ footer {
 
 aside {
 	float:left;
+	margin-left: 2%;
 	width:350;
 	height:100%;
 	background-color:#FFFFFF;
