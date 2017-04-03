@@ -3,7 +3,7 @@ header {
 	height:50px;
 	margin-left: 10%;
 	margin-bottom: 10px;
-	background-color:#00CED1;
+	background-color:#9cbfe2;
 	}
 
 article#contenu {
@@ -30,8 +30,7 @@ footer {
 	height:50px;
 	margin-left: 10%; 
 	margin-top: 10px; 
-	background-color:#00CED1;
-	opacity: 0.8;
+	background-color:#9cbfe2;
 	}
 
 aside {
