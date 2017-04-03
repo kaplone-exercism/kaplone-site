@@ -1,0 +1,10 @@
+body {
+             background: WhiteSmoke;
+             margin: 5px;
+}
+
+p.pave {
+              border: 1px solid LightGrey;
+              border-radius: 5px;
+              background: White;
+}
