@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <p style="border: 1px solid LightGrey;
-              border-radius: 5px;
-              background: White;">
+    <div class="contenu">
+    <p class="pave">
         Durant mes 9 années passées à <a href="http://www.kaplone.fr/cv/satellite.html">Satellite Multimédia</a> j'ai beaucoup utilisé FFmpeg.
     </p>
     <p class="pave">
         Dans de nombreux projets, j'avais à analyser, décoder, encoder, transformer, génerer des flux vidéos.<br>
         Les programmes et les scripts s'appuyaient sur FFmpeg, bien sûr, mais également sur :
-        <ul>
+        <ul class="liste">
             <li><a href="">Mencoder</a> qui, de façon complémentaire à FFmpeg est parfois plus complet, plus stable ou plus performant.</li>
             <li><a href="">Mlt</a> pour générer un flux vidéo avec une composition entre les sources.</li>
             <li><a href="">Sox</a> pour traiter spécifiquement les pistes sonores.</li>
@@ -24,9 +23,7 @@
         FFmpeg est un programme qui ne cesse d'évoluer, de gagner en qualité, tout en restant relativement régulier dans sa syntatxe.<br>
         Cette constance dans sa grammaire et dans le format de ses sorties font que les scripts écrits avec une ancienne version continuent à s'exécuter année après année, demandant peu d'ajustements.<br>
         Parmi les rares exceptions à cette rêgle, on note l'évolution de la nomenclatures des flux:
-        <p style="border: 1px solid LightGrey;
-              border-radius: 5px;
-              background: White;"><code>
+        <p class="code"><code>
             <b>-acodec et -vcodec</b><br>(
             respectivement pour spécifier les codecs audio et video) sont devenus<br>
         <b>-c:a et -c:v</b><br>
@@ -37,5 +34,6 @@
             ...<br>
     </code></p>
     </p>
+    </div>
 </body>
 </html>
