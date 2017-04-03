@@ -1,10 +1,8 @@
 body.contenu {
              background: repeating-linear-gradient(
-               45deg,
-               DarkSlateGray,
-               DarkSlateGray 1px,
-               LightGrey  1px,
-               LightGrey  3px
+               135deg,
+               DarkSlateGray 2px,
+               LightGrey  5px
              );
              margin: 5px;
 }
