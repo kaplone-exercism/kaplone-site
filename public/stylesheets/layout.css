@@ -8,13 +8,16 @@ header {
 
 article#contenu {
 	width: 100%;
+	padding-bottom:20px;
+	margin-bottom:20px;
 	background-color:#FFFFFF;
+
 	}
 
 article#includedContent {
 	float:left;
 	margin-left: 20px;
-	margin-rignt: 20px;
+	margin-right: 20px;
 	width:70%;
 	height:100%;
 	background: repeating-linear-gradient(
@@ -30,7 +33,6 @@ footer {
 	height:50px;
 	margin-left: 10%; 
 	margin-top: 10px;
-	padding-top: 20px;
 	background-color:#9cbfe2;
 	}
 
