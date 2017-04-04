@@ -46,6 +46,91 @@
         La recherche des meilleurs compromis était souvent longue, mais le retour sur investissement le justifiait :
         la qualité obtenue était vraiment supérieure à celles proposées par les solutions propriétaires.
     </p>
+        <p class="pave">
+            Voici un exemple de commandes "optimisées", ici pour un encodage en deux passes (issu un script en python) avec comme contraintes :
+            <ul>
+              <li>La source était déjà partiellement conformée :</li>
+              <ul>
+                  <li>Taille SD-Pal</li>
+                  <li>aspect ratio en 16/9</li>
+                  <li>vidéo en 25p, éventuellement désentrelaçée</li>
+                  <li>audio en PCM stéréo</li>
+              </ul>
+              </li>
+              <li>Le format de sortie imposait les éléments suivants :</li>
+              <ul>
+                  <li>La taille du fichier final (après intégration de l'audio et des menus)
+                      devait être au plus près de 4488 Mo (sans dépassement possible) avec une précision de 1%, soit 45 Mo  </li>
+                  <li>le flux généré devait être parfaitement compatible avec tous les équipements du marché</li>
+                  <li>La qualité globale, mais aussi dans toutes les circonstances devait être la plus élevée possible,
+                      y compris pour des débits vidéo inférieurs à 3000kb/s</li>
+                  <li>Il ne devait pas y avoir d'échec ou d'erreur lors du processus d'encodage</li>
+                  <li>le processus total de l'encodage (deux passes plus muxage final) devait rester plus rapide que le temps réel (en pratique supérieur à 100 images/s pour chaque passe) </li>
+                  <li>l'intervention humaine, décision ou contrôle devait être la plus limitée possible</li>
+              </ul>
+
+            </ul>
+        </p>
+        <p class="code"><pre>
+            commande_video_pass_1 = "ffmpeg -y
+                                            -analyzeduration 100M
+                                            -probesize 100M
+                                            -i /mnt/hdv/%s/%s
+                                            -an
+                                            -g 15
+                                            -bf 2
+                                            -flags mv0
+                                            -mblmin 1
+                                            -qmin 1
+                                            -qmax 7
+                                            -minrate 2000k
+                                            -maxrate 8500k
+                                            -b:v %sk
+                                            -trellis 2
+                                            -dia_size 260
+                                            -cmp 2
+                                            -subcmp 2
+                                            -mbcmp 2
+                                            -mbd 2
+                                            -dc 10
+                                            -b_strategy 1
+                                            -passlogfile /mnt/nfs_in/%s/ffmpeg2pass_%s.log
+                                            -pass 1
+                                            -f mpeg2video
+                                            /mnt/nfs_in/%s/%s.m2v"
+            commande_video_pass_2 = "ffmpeg -y
+                                            -analyzeduration 100M
+                                            -probesize 100M
+                                            -i /mnt/hdv/%s/%s
+                                            -an
+                                            -g 15
+                                            -bf 2
+                                            -flags mv0
+                                            -mblmin 1
+                                            -qmin 1
+                                            -qmax 7
+                                            -minrate 2000k
+                                            -maxrate 8500k
+                                            -b:v %sk
+                                            -trellis 2
+                                            -dia_size 260
+                                            -cmp 2
+                                            -subcmp 2
+                                            -mbcmp 2
+                                            -mbd 2
+                                            -dc 10
+                                            -passlogfile /mnt/nfs_in/%s/ffmpeg2pass_%s.log
+                                            -pass 2
+                                            -f mpeg2video
+                                            /mnt/nfs_in/%s/%s.m2v"
+            commande_audio = "ffmpeg -y
+                                     -i /mnt/hdv/%s/%s
+                                     -vn
+                                     -b:a 256k
+                                     /mnt/nfs_in/%s/%s.ac3"
+            commande_mplex = "mplex -f 8 /mnt/nfs_in/%s/%s.m2v /mnt/nfs_in/%s/%s.ac3 -o /mnt/nfs_out/%s/%s_mplex.mpg"
+        </pre></p>
+
     </div>
 </body>
 </html>
