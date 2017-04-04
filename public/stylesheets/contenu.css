@@ -15,7 +15,7 @@ p.pave {
               padding: 5px;
 }
 
-p.code {
+p.code pre.code {
               border: 1px solid LightGrey;
               border-radius: 5px;
               background: White;
