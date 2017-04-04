@@ -12,7 +12,7 @@ article#contenu {
 	}
 
 article#includedContent {
-	float:right;
+	float:left;
 	margin-left: 20px;
 	margin-rignt: 20px;
 	width:70%;
