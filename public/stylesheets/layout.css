@@ -14,8 +14,8 @@ article#contenu {
 article#includedContent {
 	float:right;
 	margin-left: 20px;
-	margin-: ;
-	width:80%;
+	margin-rignt: 20px;
+	width:70%;
 	height:100%;
 	background: repeating-linear-gradient(
                    135deg,
