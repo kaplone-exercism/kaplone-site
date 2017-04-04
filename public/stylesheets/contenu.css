@@ -1,10 +1,10 @@
 body.contenu {
              background-color:#FFFFFF;
-             font-size:150%;
 }
 
 div.contenu {
             margin: 5px;
+            font-size:150%;
 }
 
 p.pave {
