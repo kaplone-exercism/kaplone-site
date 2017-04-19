@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<head>
+    <!-- jQuery library -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/leftColumn.js")"></script>
+</head>
+
 <body class='contenu'>
     <meta charset="UTF-8">
     <div class="contenu">
     <p class="pave">
-        Durant mes 9 années passées à <a class="cv" id="satellite">Satellite Multimédia</a> j'ai beaucoup utilisé <a href="https://ffmpeg.org/">FFmpeg</a>.
+        Durant mes 9 années passées à <a class="cv" data-lien="satellite">Satellite Multimédia</a> j'ai beaucoup utilisé <a href="https://ffmpeg.org/">FFmpeg</a>.
     </p>
     <p class="pave">
         Dans de nombreux projets, j'avais à analyser, décoder, encoder, transformer, génerer des flux vidéos.<br>
