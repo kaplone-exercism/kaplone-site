@@ -7,7 +7,31 @@ div.contenu {
             font-size:120%;
 }
 
-p.pave {
+div.gauche {
+            width: 80%;
+            float:left;
+            margin: 5px;
+            padding: 5px;
+}
+
+div.droite {
+            width: 20%;
+            float: right;
+            margin: 5px;
+            padding: 5px;
+}
+
+
+
+p.texte {
+              border: 1px solid LightGrey;
+              border-radius: 5px;
+              background: White ;
+              margin: 5px;
+              padding: 5px;
+}
+
+p.titre {
               border: 1px solid LightGrey;
               border-radius: 5px;
               background: BlanchedAlmond ;
@@ -30,3 +54,4 @@ ul.liste {
               background: White;
               margin: 5px;
 }
+
