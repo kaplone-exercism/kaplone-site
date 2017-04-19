@@ -2,10 +2,7 @@ $(document).ready(function () {
     $('ul.tree').hide();
 
     $('a.menu').click(function () {
-        //$('ul.tree').hide();
-        //$(this).parent().parent().children('label.tree-toggler').toggle(600);
-        alert("/assets/articles/"+$(this).attr("id"));
-        $("#includedContent").load("/assets/articles/"+$(this).attr("id"));
+        $("#includedContent").load("/assets/articles/" + $(this).attr("id") + ".html");
     });
 
     $('label.tree-toggler').click(function () {
