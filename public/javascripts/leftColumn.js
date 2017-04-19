@@ -8,8 +8,8 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('ul.tree').hide();
 
-    $('ul.tree').click(function () {
-//         $('ul.tree').hide();
-//         $(this).parent().children('label.tree-toggler').toggle(600);
+    $('a.menu').click(function () {
+         $('ul.tree').hide();
+         $(this).parent().parent().children('label.tree-toggler').toggle(600);
     });
 });
