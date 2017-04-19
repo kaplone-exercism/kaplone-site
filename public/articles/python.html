@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<head>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+    $('a.lien').click(function () {
+        alert($(this).attr("id"));
+        $("#includedContent").load("/assets/articles/" + $(this).attr("id") + ".html");
+        $('ul.tree').hide(600);
+        $("a[id='" + $(this).attr("id") + "']").parent().parent().toggle(600);
+    });
+});
+    </script>
+</head>
+
+
 <body class='contenu'>
 <meta charset="UTF-8">
 <div class="contenu">
     <p class="pave">
-        Autodidacte depuis 2004 (j'ai du apprendre le langage <a class="cv" id="python">python</a> sur le tas pour améliorer le logiciel "ratatouille",
+        Autodidacte depuis 2004 (j'ai du apprendre le langage <a class="lien" id="python">python</a> sur le tas pour améliorer le logiciel "ratatouille",
         initialement écrit par <a href="http://www.lamenagerie.com/">la ménagerie</a> et diffusé dans leur "boîte à outils".<br>
         J'y ai appris à lire un code source, à comprendre comment la façon de penser d'un développeur influence et structure sa manière d'écrire une application.<br>
-        Plus prosaïquement, j'ai découvert le langage python, la littérature informatique, la bibliothèque graphique GTK+, ainsi que <a class="cv" id="ffmpeg">FFmpeg</a> et l'existence de <a class="cv" id="linux">linux</a>
+        Plus prosaïquement, j'ai découvert le langage python, la littérature informatique, la bibliothèque graphique GTK+, ainsi que <a class="lien" id="ffmpeg">FFmpeg</a> et l'existence de <a class="lien" id="linux">linux</a>
     </p>
     <p class="pave">
-        A partir de 2006, année de ma prise de poste chez <a class="cv" id="satellite">satellite Multimédia</a> j'ai été de plus en plus souvent en situation de devoir développer des scripts ou des petites applications.<br>
-        Je commençais à me sentir familier avec  python et j'ai continué avec python / GTK+ / ffmpeg. Je n'ai découvert que plus tard, en 2012, en commençant les cours au <a class="cv" id="cnam">CNAM</a> a quel point cette impression de familiarité pouvait être une illusion.
+        A partir de 2006, année de ma prise de poste chez <a class="lien" id="satellite">satellite Multimédia</a> j'ai été de plus en plus souvent en situation de devoir développer des scripts ou des petites applications.<br>
+        Je commençais à me sentir familier avec  python et j'ai continué avec python / GTK+ / ffmpeg. Je n'ai découvert que plus tard, en 2012, en commençant les cours au <a class="lien" id="cnam">CNAM</a> a quel point cette impression de familiarité pouvait être une illusion.
     </p>
 
 </div>
