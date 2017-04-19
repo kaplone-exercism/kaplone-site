@@ -21,6 +21,17 @@ div.droite {
             padding: 5px;
 }
 
+#identité {
+           font-size:150%;
+}
+
+p.texte {
+              border: 1px solid LightGrey;
+              border-radius: 5px;
+              background: White ;
+              margin: 5px;
+              padding-right: 200px;
+}
 
 
 div.texte {
