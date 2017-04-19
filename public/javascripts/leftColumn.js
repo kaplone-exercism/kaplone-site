@@ -10,8 +10,8 @@ $(document).ready(function () {
         $('ul.tree').hide(600);
         $("a[id='" + $(this).attr("id") + "']").parent().toggle(600);
         alert("a[id='" + $(this).attr("id") + "']");
-        alert($("a[id='" + $(this).attr("id") + "']"));
-        alert($("a[id='" + $(this).attr("id") + "']").parent());
+        alert($("a[id='" + $(this).attr("id") + "']").attr("class"));
+        alert($("a[id='" + $(this).attr("id") + "']").parent().attr("class"));
     });
 
     $('label.tree-toggler').click(function () {
