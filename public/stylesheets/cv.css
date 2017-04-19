@@ -16,9 +16,9 @@ div.gauche {
 
 div.droite {
             width: 20%;
-            float: right;
-            margin: 5px;
-            padding: 5px;
+            float: left;
+            margin: 250px;
+            padding: 250px;
 }
 
 
