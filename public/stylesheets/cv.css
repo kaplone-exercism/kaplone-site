@@ -8,7 +8,7 @@ div.contenu {
 }
 
 div.gauche {
-            width: 60%;
+            width: 30%;
             float:left;
             margin: 5px;
             padding: 5px;
@@ -23,11 +23,11 @@ div.droite {
 
 #coordonnees {
            font-size:150%;
-           margin-left: 200px;
+           margin-right: 200px;
 }
 
 #identite {
-           margin-right: 200px;
+           margin-left: 200px;
 }
 
 p.texte {
