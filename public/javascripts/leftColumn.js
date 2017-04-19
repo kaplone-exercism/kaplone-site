@@ -6,10 +6,10 @@ $(document).ready(function () {
     });
 
     $('a.cv').click(function () {
-        alert($(this).attr("data-lien"));
-        $("#includedContent").load("/assets/articles/" + $(this).attr("data-lien") + ".html");
+        alert($(this).attr("id"));
+        $("#includedContent").load("/assets/articles/" + $(this).attr("id") + ".html");
         $('ul.tree').hide(600);
-        $("a[id='" + $(this).attr("data-lien") + "']").parent().parent().toggle(600);
+        $("a[id='" + $(this).attr("id") + "']").parent().parent().toggle(600);
     });
 
     $('label.tree-toggler').click(function () {
