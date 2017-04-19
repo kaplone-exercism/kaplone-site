@@ -5,7 +5,7 @@ $(document).ready(function () {
         //$('ul.tree').hide();
         //$(this).parent().parent().children('label.tree-toggler').toggle(600);
         alert("/assets/articles/"+$(this).attr("id"));
-        $("#includedContent").load("public/articles/"+$(this).attr("id"));
+        $("#includedContent").load("/assets/articles/"+$(this).attr("id"));
     });
 
     $('label.tree-toggler').click(function () {
