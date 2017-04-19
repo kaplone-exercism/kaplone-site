@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('a.menu').click(function () {
         //$('ul.tree').hide();
         //$(this).parent().parent().children('label.tree-toggler').toggle(600);
+        alert("/assets/images/articles/"+$(this).attr("id"));
         $("#includedContent").load("/assets/images/articles/"+$(this).attr("id"));
     });
 
