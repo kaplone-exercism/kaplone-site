@@ -9,6 +9,9 @@ $(document).ready(function () {
         $("#includedContent").load("/assets/articles/" + $(this).attr("id") + ".html");
         $('ul.tree').hide(600);
         $("a[id='" + $(this).attr("id") + "']").parent().toggle(600);
+        alert("a[id='" + $(this).attr("id") + "']");
+        alert($("a[id='" + $(this).attr("id") + "']"));
+        alert($("a[id='" + $(this).attr("id") + "']").parent());
     });
 
     $('label.tree-toggler').click(function () {
