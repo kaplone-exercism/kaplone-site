@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    //$('ul.tree').hide();
+    $('ul.tree').hide();
 });
 
 $('a.menu').click(function () {
     $('ul.tree').hide();
     $(this).parent().parent().children('label.tree-toggler').toggle(600);
-    $("#includedContent").load($(this).attr("id"));
+    $("#includedContent").load("/assets/images/articles/"+$(this).attr("id"));
 });
 
 $('label.tree-toggler').click(function () {
