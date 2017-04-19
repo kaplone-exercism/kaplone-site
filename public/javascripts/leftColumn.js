@@ -11,7 +11,7 @@ $(document).ready(function () {
         $('ul.tree').hide(600);
         $("a#" + $(this).attr("id")).parent().children('ul.tree').toggle(600);
         alert("/assets/articles/" + $(this).attr("id") + ".html");
-    );
+    });
 
     $('label.tree-toggler').click(function () {
         $('ul.tree').hide(600);
