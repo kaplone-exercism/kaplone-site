@@ -17,13 +17,13 @@ div.gauche {
 div.droite {
             width: 20%;
             float: left;
-            margin: 250px;
-            padding: 250px;
+            margin: 5px;
+            padding: 5px;
 }
 
 
 
-p.texte {
+div.texte {
               border: 1px solid LightGrey;
               border-radius: 5px;
               background: White ;
@@ -31,7 +31,7 @@ p.texte {
               padding: 5px;
 }
 
-p.titre {
+div.titre {
               border: 1px solid LightGrey;
               border-radius: 5px;
               background: BlanchedAlmond ;
