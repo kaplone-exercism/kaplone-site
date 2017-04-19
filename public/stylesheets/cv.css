@@ -21,8 +21,13 @@ div.droite {
             padding: 5px;
 }
 
-#identité {
+#coordonnees {
            font-size:150%;
+           margin-left: 200px;
+}
+
+#identite {
+           margin-right: 200px;
 }
 
 p.texte {
@@ -30,7 +35,7 @@ p.texte {
               border-radius: 5px;
               background: White ;
               margin: 5px;
-              padding-right: 200px;
+              padding: 5px;
 }
 
 
