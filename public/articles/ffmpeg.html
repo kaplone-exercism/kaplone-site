@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <!-- jQuery library -->
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/leftColumn.js")"></script>
-</head>
-
 <body class='contenu'>
     <meta charset="UTF-8">
     <div class="contenu">
@@ -23,17 +10,19 @@
     <p class="pave">
         Dans de nombreux projets, j'avais à analyser, décoder, encoder, transformer, génerer des flux vidéos.<br>
         Les programmes et les scripts s'appuyaient sur FFmpeg, bien sûr, mais également sur :
+    </p>
         <ul class="liste">
             <li><a href="http://www.mplayerhq.hu/DOCS/HTML/fr/mencoder.html">Mencoder</a> qui, de façon complémentaire à FFmpeg est parfois plus complet, plus stable ou plus performant.</li>
             <li><a href="https://www.mltframework.org/features/">Mlt</a> pour générer un flux vidéo avec une composition entre les sources.</li>
             <li><a href="http://sox.sourceforge.net/soxformat.html">Sox</a> pour traiter spécifiquement les pistes sonores.</li>
             <li><a href="http://manpages.ubuntu.com/manpages/precise/man1/mediainfo.1.html">MediaInfo</a> pour accéder aux métadatas des fichiers.</li>
         </ul>
-    </p>
+
     <p class="pave">
         FFmpeg est un programme qui ne cesse d'évoluer, de gagner en qualité, tout en restant relativement régulier dans sa syntaxe.<br>
         Cette constance dans sa grammaire et dans le format de ses sorties font que les scripts écrits avec une ancienne version continuent à s'exécuter année après année, demandant peu d'ajustements.<br>
         Parmi les rares exceptions à cette rêgle, on note l'évolution de la nomenclatures des flux:
+    </p>
         <p class="code"><code>
             <b>-acodec et -vcodec</b><br>(
             respectivement pour spécifier les codecs audio et video) sont devenus<br>
@@ -43,7 +32,7 @@
             -c:a et -c:v pour les codecs,<br>
             -q:a et -q:v pour la qualité,<br>
             ...<br>
-    </code></p>
+    </code>
     </p>
     <p class="pave">
         Une des particularités de FFmpeg est de diriger les informations à afficher sur la console sur STDERR.<br>
@@ -61,7 +50,7 @@
             Voici un exemple de commandes "optimisées", ici pour un encodage en deux passes (issu un script en python) avec comme contraintes :
         </p>
             <ul class="liste">
-              <li>La source était déjà partiellement conformée :</li>
+              <li>La source était déjà partiellement conformée :
               <ul>
                   <li>Taille SD-Pal</li>
                   <li>aspect ratio en 16/9</li>
@@ -69,7 +58,7 @@
                   <li>audio en PCM stéréo</li>
               </ul>
               </li>
-              <li>Le format de sortie imposait les éléments suivants :</li>
+              <li>Le format de sortie imposait les éléments suivants :
               <ul>
                   <li>La taille du fichier final (après intégration de l'audio et des menus)
                       devait être au plus près de 4488 Mo (sans dépassement possible) avec une précision de 1%, soit 45 Mo  </li>
