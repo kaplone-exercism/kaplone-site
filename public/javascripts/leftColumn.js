@@ -16,6 +16,7 @@ $(document).ready(function () {
     $('a.home').click(function() {
         $('ul.tree').hide(600);
         $("#includedContent").load("/assets/articles/cv.html");
+        $('a.expand').html($.parseHTML('<img src="/assets/images/TreeView.gif" height="42" width="42"><label class="tree-toggler">Déplier tout</label>'));
         window.scrollTo(0, 0);
     });
 
