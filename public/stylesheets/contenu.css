@@ -7,6 +7,15 @@ div.contenu {
             font-size:120%;
 }
 
+span#sous-titre {
+    text-align: center;
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: large;
+	margin-top: 10px;
+	padding-top: 11px;
+}
+
 p.pave {
               border: 1px solid LightGrey;
               border-radius: 5px;
