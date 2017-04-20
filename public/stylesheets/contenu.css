@@ -7,7 +7,7 @@ div.contenu {
             font-size:120%;
 }
 
-span#sous-titre {
+span.sous-titre {
     text-align: center;
 	font-family: sans-serif;
 	font-weight: normal;
