@@ -7,6 +7,15 @@ header {
 	background-color:#9cbfe2;
 	}
 
+.sous-titre {
+    width:60%;
+	height:40px;
+	margin-left: 20%;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	background-color:#9cbfe2;
+}
+
 article#contenu {
 	width: 100%;
 	padding-bottom:20px;
