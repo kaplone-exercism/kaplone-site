@@ -10,6 +10,12 @@ header {
 p.sous-titre {
     width:60%;
 	height:40px;
+	text-align: center;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: large;
+    margin-top: 10px;
+    padding-top: 11px;
 	margin-left: 20%;
 	margin-bottom: 20px;
 	border-radius: 5px;
