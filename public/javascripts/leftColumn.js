@@ -21,8 +21,8 @@ $(document).ready(function () {
 
     $('a.expand').click(function() {
         alert("expand");
-        alert($(this.children("img")).attr("src"));
-        if ($(this.children("img")).attr("src") == "/assets/images/TreeView.gif"){
+        alert($(this).children("img").attr("src"));
+        if ($(this).children("img").attr("src") == "/assets/images/TreeView.gif"){
             $('ul.tree').hide(60);
             $(this).html($.parseHTML('<img src="/assets/images/icon-65-128.png" height="42" width="42"><label class="tree-toggler">Replier tout</label>'));
         }
