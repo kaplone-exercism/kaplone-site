@@ -22,13 +22,13 @@ $(document).ready(function () {
     $('a.expand').click(function() {
         $('ul.tree').hide(60);
         $('ul.tree').toggle(600);
-        $(this).parent().parseHTML('<a class="collapse"><img src="/assets/images/TreeView.gif" height="42" width="42"><label class="tree-toggler">Replier tout</label></a>');
+        $(this).parent().html($.parseHTML('<a class="collapse"><img src="/assets/images/TreeView.gif" height="42" width="42"><label class="tree-toggler">Replier tout</label></a>'));
         window.scrollTo(0, 0);
     });
 
     $('a.collapse').click(function() {
         $('ul.tree').toggle(600);
-        $(this).parent().parseHTML('<a class="expand"><img src="/assets/images/icon-65-128.png" height="42" width="42"><label class="tree-toggler">Déplier tout</label></a>');
+        $(this).parent().html($.parseHTML('<a class="expand"><img src="/assets/images/icon-65-128.png" height="42" width="42"><label class="tree-toggler">Déplier tout</label></a>'));
         window.scrollTo(0, 0);
     });
 
