@@ -11,6 +11,12 @@ span.sous-titre {
 
 }
 
+img.logo {
+             margin: 5px;
+             padding: 5px;
+             float:left;
+}
+
 p.pave {
               border: 1px solid LightGrey;
               border-radius: 5px;
