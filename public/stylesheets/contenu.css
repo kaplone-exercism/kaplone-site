@@ -13,7 +13,6 @@ span.sous-titre {
 
 img.logo {
              margin: 5px;
-             padding: 5px;
              float:left;
 }
 
@@ -39,4 +38,5 @@ ul.liste {
               border-radius: 5px;
               background: White;
               margin: 5px;
+              padding: 5px;
 }
