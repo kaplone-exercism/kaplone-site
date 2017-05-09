@@ -13,6 +13,7 @@ span.sous-titre {
 
 img.logo {
              float:left;
+             padding-right: 5px;
 }
 
 p.pave {
@@ -21,15 +22,6 @@ p.pave {
               background: BlanchedAlmond ;
               margin: 5px;
               padding: 5px;
-}
-
-p.sous_pave {
-              border: 1px solid LightGrey;
-              border-radius: 5px;
-              background: BlanchedAlmond ;
-              margin: 5px;
-              padding: 5px;
-              padding-left: 30px;
 }
 
 p.code, pre.code {
@@ -53,4 +45,5 @@ ul.liste_simple {
               border-radius: 5px;
               background: White;
               margin: 5px;
+              padding-left: 30px;
 }
