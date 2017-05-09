@@ -40,6 +40,14 @@ ul.liste {
               margin: 5px;
 }
 
+ul.liste_sans_puce {
+              list-style-type: none;
+              border: 1px solid LightGrey;
+              border-radius: 5px;
+              background: White;
+              margin: 5px;
+}
+
 ul.liste_simple {
               border: 1px solid White;
               border-radius: 5px;
