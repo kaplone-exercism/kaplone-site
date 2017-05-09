@@ -39,3 +39,10 @@ ul.liste {
               background: White;
               margin: 5px;
 }
+
+ul.liste_simple {
+              border: 1px solid White;
+              border-radius: 5px;
+              background: White;
+              margin: 5px;
+}
