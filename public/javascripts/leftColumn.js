@@ -33,8 +33,10 @@ $(document).ready(function () {
     });
 
     $('label.tree-toggler').click(function () {
-        $('ul.tree').hide(600);
-        $(this).parent().children('ul.tree').toggle(600);
+        if ($(this).parent().children('ul.tree').is(":hidden")) {
+            $('ul.tree').hide(600);
+            $(this).parent().children('ul.tree').toggle(600);
+        }
     });
 });
 
