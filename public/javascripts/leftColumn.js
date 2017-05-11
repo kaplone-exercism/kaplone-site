@@ -37,6 +37,9 @@ $(document).ready(function () {
             $('ul.tree').hide(600);
             $(this).parent().children('ul.tree').toggle(600);
         }
+        else {
+            $('ul.tree').hide(600);
+        }
     });
 });
 
