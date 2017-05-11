@@ -8,9 +8,12 @@ $(document).ready(function () {
         }
         window.scrollTo(0, 0);
 
-        alert(fetchHeader("/assets/articles/" + $(this).attr("id") + ".html",'Last-Modified'));
+//        alert(fetchHeader("/assets/articles/" + $(this).attr("id") + ".html",'Last-Modified'));
     });
 
+
+    // reproduire dans leftColumn.js pour a.menu
+    // et dans cv.js pour a.cv
     function fetchHeader(url, wch) {
         try {
             var req=new XMLHttpRequest();
