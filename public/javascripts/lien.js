@@ -7,7 +7,7 @@ $(document).ready(function () {
             $("a[id='" + $(this).attr("id") + "']").parent().parent().toggle(600);
         }
         window.scrollTo(0, 0);
-
+        $('#updated').text(fetchHeader("/assets/articles/" + $(this).attr("id") + ".html",'Last-Modified'));
 //        alert(fetchHeader("/assets/articles/" + $(this).attr("id") + ".html",'Last-Modified'));
     });
 
