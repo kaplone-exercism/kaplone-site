@@ -20,8 +20,8 @@ $(document).ready(function () {
                 var derniereModif= req.getResponseHeader(wch);
                 var dateModif = new Date(derniereModif);
                 var jour = dateModif.getDate();
-                var mois = dateModif.getMonth();
-                var annee = dateModif.getYear();
+                var mois = dateModif.getMonth() + 1;
+                var annee = dateModif.getYear() + 1900;
                 return "Dernière modification de la page le " + jour + "/" + mois + "/" + annee;
             }
             else return false;
