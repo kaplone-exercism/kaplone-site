@@ -11,5 +11,8 @@ GET     /scores/:niveau             controllers.ControleurResultats.afficherResu
 #switch to api routes
 ->  /API api.Routes
 
+#switch to perso routes
+->  /perso perso.Routes
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
