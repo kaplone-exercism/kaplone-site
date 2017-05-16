@@ -16,18 +16,18 @@ div.gauche {
 
 div.droite {
             width: 25%;
-            float: left;
+            float: right;
             margin: 5px;
             padding: 5px;
 }
 
 #coordonnees {
            font-size:125%;
-           margin-right: 200px;
 }
 
 #identite {
-           margin-left: 200px;
+           vertical-align: middle;
+           horizontal-align: middle;
 }
 
 p.texte {
