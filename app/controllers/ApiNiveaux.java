@@ -3,6 +3,7 @@ package controllers;
 import java.sql.*;
 import javax.sql.*;
 import java.io.*;
+import java.nio.*;
 
 import play.db.*;
 
@@ -51,18 +52,16 @@ public class ApiNiveaux extends Controller {
 
                 MultipartFormData body = request().body().asMultipartFormData();
 
-                FilePart<File> picture = body.getFile("picture");
+                FilePart picture = body.getFile("picture");
                 if (picture != null) {
                     String fileName = picture.getFilename();
                     String contentType = picture.getContentType();
                     File file = picture.getFile();
+                    enregistrerImage(file);
                 }
 
                 String bodyText = body.getFile("text").
                 //String bodyText = request().body().asText();
-
-                enregistrerImage(file);
-
                 inclureNiveau(bodyText);
 
                 return ok(decrypted.split(" ")[0] + " est un utilisateur valide\n" + body);
@@ -95,10 +94,10 @@ public class ApiNiveaux extends Controller {
 
         String home =  System.getProperty("user.home");
 
-        File convFile = new File(home + "/captures",filename);
+        File convFile = new File(home + "/captures",fileName);
         convFile.createNewFile();
         FileOutputStream fos = new FileOutputStream(convFile);
-        fos.write(file.getBytes());
+        fos.write(Files.readAllBytes(file));
         fos.close();
 
     }
