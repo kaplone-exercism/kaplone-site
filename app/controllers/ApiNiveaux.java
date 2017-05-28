@@ -8,6 +8,7 @@ import play.db.*;
 
 import play.*;
 import play.mvc.*;
+import play.mvc.Http.MultipartFormData.*;
 import play.mvc.Http.*;
 
 import java.io.BufferedReader;
@@ -48,7 +49,7 @@ public class ApiNiveaux extends Controller {
 
             if (Settings.getUsers().contains(decrypted.split(" ")[0])) {
 
-                MultipartFormData<File> body = request().body().asMultipartFormData();
+                MultipartFormData body = request().body().asMultipartFormData();
 
                 FilePart<File> picture = body.getFile("picture");
                 if (picture != null) {
