@@ -54,6 +54,8 @@ public class ApiNiveaux extends Controller {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        return "problème avec l'utilisateur ..."
     }
 
 }
