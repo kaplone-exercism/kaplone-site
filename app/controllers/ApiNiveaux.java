@@ -57,11 +57,11 @@ public class ApiNiveaux extends Controller {
                     String fileName = picture.getFilename();
                     String contentType = picture.getContentType();
                     File file = picture.getFile();
-                    enregistrerImage(file);
+                    enregistrerImage(file, fileName);
                 }
 
-                String bodyText = body.getFile("text").
-                //String bodyText = request().body().asText();
+                String bodyText = body.getFile("text");
+//                String bodyText = request().body().asText();
                 inclureNiveau(bodyText);
 
                 return ok(decrypted.split(" ")[0] + " est un utilisateur valide\n" + body);
