@@ -14,7 +14,33 @@
         <span class="sous-titre">Bases de données : MongoDB</span>
     </p>
     <p class="pave">
-        MongoDB est une base de données NoSql orientée document.
+        MongoDB est une base de données NoSql orientée documents.
+    </p>
+    <p class="pave">
+        Mongodb est un gestionnaire de base de données non relationnelle.<br>
+        Cela signifie qu'il se démarque du monde SQL en abandonnant certaines contraintes.<br>
+        Il faut cependant noter que ces contraintes avaient un double rôle : à la fois des sécurités et des limitations.<br>
+        <br>
+        Ainsi, MongoDB laisse de coté le principe ACID (Atomicité, Cohérence, Isolation, Durabilité) et la notion de schéma.
+    </p>
+    <p class="pave">
+        Voilà ce qui fait le charme, la force et la faiblesse de MongoDB. Une fois déclarée une collection (l'équivalent d'une table), on peut y stocker tout ce que l'on veut, sans distinction :<br>
+        des listes, des objets composites, des références à des documents, ...<br>
+        Alors qu'avec une base relationnelle on va chercher (dans un premier temps au moins) à normaliser la base à mettre en place, MongoDB fait la part belle à la dénormalisation.<br>
+        <br>
+        Mais il ne faut pas se faire trop d'illusions : au final, ce que le SGBD n'impose pas et ne fais pas, le développeur sera en charge de le prévoir et de le gérer ...
+    </p>
+    <p class="pave">
+        MongoDB peut être requété directement dans son environnement : mongo shell. Mongo shell est un interpréteur javascript. Les opérations de maintenance sont généralement effectuées dans ce langage.<br>
+        Dans une application, l'accès à la base se fait plus généralement par un ORM ,qui ne s'appelle plus vraiment un ORM, mais qui va opérer un mapping objet / document / objet, le plus souvent en produisant ou parsant un flux Json.<br>
+        Car si sous le capot de Mongo shell on a trouvé du javascript, les documents sont manipulés dans MongoDB sous le format <a class="lien" id="json">Json</a>.
+    </p>
+    <p class="pave">
+        Dans de nombreux projets j'ai pu m'appuyer sur la souplesse et la puissance de MongoDB. Si la solution peut être périlleuse pour des applications critiques, ça reste une alternative très performante pour les opérations de persistance, surtout si le schéma n'est pas fixé dès le début du traitement.
+    </p>
+    <p class="pave">
+        En 2014, j'ai obtenu un certificat de MongoDB University :
+        <a href="/assets/pdf/certificate.pdf" target="_blank"><img src="/assets/images/Certificate_mongodb.jpg" width="500"></a>
     </p>
     <p class="pave">
         Site : <a href="https://www.mongodb.com/" target="_blank">mongodb.com</a>
