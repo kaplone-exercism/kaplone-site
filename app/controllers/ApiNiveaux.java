@@ -96,8 +96,9 @@ public class ApiNiveaux extends Controller {
         String home =  System.getProperty("user.home");
 
         File convFile = new File(home + "/captures",fileName);
-        convFile.createNewFile();
+
         try {
+            convFile.createNewFile();
             FileOutputStream fos = new FileOutputStream(convFile);
             fos.write(Files.readAllBytes(file.toPath()));
             fos.close();
