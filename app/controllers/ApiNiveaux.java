@@ -50,20 +50,21 @@ public class ApiNiveaux extends Controller {
 
             if (Settings.getUsers().contains(decrypted.split(" ")[0])) {
 
-                MultipartFormData body = request().body().asMultipartFormData();
-
-                FilePart picture = body.getFile("picture");
-                if (picture != null) {
-                    String fileName = picture.getFilename();
-                    String contentType = picture.getContentType();
-                    File file = picture.getFile();
-                    enregistrerImage(file, fileName);
-                }
-
-//                FilePart texte = body.getFile("text");
-//                String bodyText = texte.getFile();
                 String bodyText = request().body().asText();
-                inclureNiveau(bodyText);
+                if (bodyText != null){
+                    inclureNiveau(bodyText);
+                }
+                else {
+                    MultipartFormData body = request().body().asMultipartFormData();
+
+                    FilePart picture = body.getFile("picture");
+                    if (picture != null) {
+                        String fileName = picture.getFilename();
+                        String contentType = picture.getContentType();
+                        File file = picture.getFile();
+                        enregistrerImage(file, fileName);
+                    }
+                }
 
                 return ok(decrypted.split(" ")[0] + " est un utilisateur valide\n" + body);
             }
