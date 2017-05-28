@@ -64,8 +64,11 @@ public class ApiNiveaux extends Controller {
 
     private void inclureNiveau(String s){
 
+        String home =  System.getProperty("user.home");
+        File file = new File(home, "niveaux_.conf");
+
         try {
-            FileWriter fw = new FileWriter("/assets/confs/niveaux_.conf", true);
+            FileWriter fw = new FileWriter(file, true);
             fw.write("\n");
             fw.write(s);
             fw.close();
@@ -73,6 +76,15 @@ public class ApiNiveaux extends Controller {
         }catch (IOException ioe){
             ioe.printStackTrace();
         }
+    }
+
+    public Result niveaux(){
+
+        String home =  System.getProperty("user.home");
+        File file = new File(home, "niveaux_.conf");
+
+        return ok(file);
+    }
     }
 }
 
