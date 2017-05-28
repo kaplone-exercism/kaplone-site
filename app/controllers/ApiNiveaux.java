@@ -65,7 +65,7 @@ public class ApiNiveaux extends Controller {
     private void inclureNiveau(String s){
 
         try {
-            FileWriter fw = new FileWriter("/assets/conf/niveaux_.conf", true);
+            FileWriter fw = new FileWriter("/assets/confs/niveaux_.conf", true);
             fw.write("\n");
             fw.write(s);
             fw.close();
@@ -74,6 +74,5 @@ public class ApiNiveaux extends Controller {
             ioe.printStackTrace();
         }
     }
-
 }
 
