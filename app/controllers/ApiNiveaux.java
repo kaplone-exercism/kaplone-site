@@ -60,9 +60,9 @@ public class ApiNiveaux extends Controller {
                     enregistrerImage(file, fileName);
                 }
 
-                FilePart texte = body.getFile("text");
-                String bodyText = texte.getFile();
-//                String bodyText = request().body().asText();
+//                FilePart texte = body.getFile("text");
+//                String bodyText = texte.getFile();
+                String bodyText = request().body().asText();
                 inclureNiveau(bodyText);
 
                 return ok(decrypted.split(" ")[0] + " est un utilisateur valide\n" + body);
