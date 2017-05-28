@@ -1,5 +1,7 @@
 package models;
 
+import java.util.*;
+
 public class Settings {
 
     private static List<String> users;
