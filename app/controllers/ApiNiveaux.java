@@ -29,7 +29,7 @@ import utils.*;
 
 public class ApiNiveaux extends Controller {
 
-    public Result soumissionNiveau(String user) {
+    public Result soumissionNiveau() {
 
         String body = request().body().asText();
 
