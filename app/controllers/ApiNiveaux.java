@@ -67,7 +67,7 @@ public class ApiNiveaux extends Controller {
         try {
             FileWriter fw = new FileWriter("/assets/conf/niveaux_.conf", true);
             fw.write("\n");
-            fw.write(body);
+            fw.write(s);
             fw.close();
 
         }catch (IOException ioe){
