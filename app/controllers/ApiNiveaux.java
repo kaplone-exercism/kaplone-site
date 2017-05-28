@@ -38,15 +38,21 @@ public class ApiNiveaux extends Controller {
 
         LoadConfig.loadSettings();
         String key = Settings.getKey();
-        Key aesKey = new SecretKeySpec(key.getBytes(), "AES");
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.DECRYPT_MODE, aesKey);
-        Base64.Decoder decoder = Base64.getDecoder();
-        byte[] encrypted = decoder.decode(bytes);
-        String decrypted = new String(cipher.doFinal(encrypted));
 
-        if (Settings.getUsers().contains(decrypted.split(" ")[0])){
-            return ok(decrypted.split(" ")[0]  + " est un utilisateur valide");
+        try {
+            Key aesKey = new SecretKeySpec(key.getBytes(), "AES");
+            Cipher cipher = Cipher.getInstance("AES");
+            cipher.init(Cipher.DECRYPT_MODE, aesKey);
+            Base64.Decoder decoder = Base64.getDecoder();
+            byte[] encrypted = decoder.decode(bytes);
+            String decrypted = new String(cipher.doFinal(encrypted));
+
+            if (Settings.getUsers().contains(decrypted.split(" ")[0])) {
+                return ok(decrypted.split(" ")[0] + " est un utilisateur valide");
+            }
+        } catch (NoSuchAlgorithmException | InvalidKeyException | IllegalBlockSizeException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }
 
