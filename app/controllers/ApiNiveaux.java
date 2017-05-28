@@ -48,7 +48,10 @@ public class ApiNiveaux extends Controller {
             String decrypted = new String(cipher.doFinal(encrypted));
 
             if (Settings.getUsers().contains(decrypted.split(" ")[0])) {
-                return ok(decrypted.split(" ")[0] + " est un utilisateur valide");
+
+                inclureNiveau(body);
+
+                return ok(decrypted.split(" ")[0] + " est un utilisateur valide\n" + body);
             }
         } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e) {
             // TODO Auto-generated catch block
@@ -56,6 +59,19 @@ public class ApiNiveaux extends Controller {
         }
 
         return status(488, "problème avec l'utilisateur ...");
+    }
+
+    private void inclureNiveau(String s){
+
+        try {
+            FileWriter fw = new FileWriter("/assets/conf/niveaux_.conf", true);
+            fw.write("\n");
+            fw.write(body);
+            fw.close();
+
+        }catch (IOException ioe){
+            ioe.printStackTrace();
+        }
     }
 
 }
