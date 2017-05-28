@@ -85,6 +85,5 @@ public class ApiNiveaux extends Controller {
 
         return ok(file);
     }
-    }
 }
 
