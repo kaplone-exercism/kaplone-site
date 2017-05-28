@@ -55,7 +55,7 @@ public class ApiNiveaux extends Controller {
             e.printStackTrace();
         }
 
-        return "problème avec l'utilisateur ..."
+        return "problème avec l'utilisateur ...";
     }
 
 }
