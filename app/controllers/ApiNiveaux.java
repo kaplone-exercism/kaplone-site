@@ -60,7 +60,8 @@ public class ApiNiveaux extends Controller {
                     enregistrerImage(file, fileName);
                 }
 
-                String bodyText = body.getFile("text");
+                FilePart texte = body.getFile("text");
+                String bodyText = texte.getFile();
 //                String bodyText = request().body().asText();
                 inclureNiveau(bodyText);
 
