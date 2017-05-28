@@ -13,7 +13,7 @@ import views.html.*;
 
 public class ApiNiveaux extends Controller {
 
-    public Result soumissionNiveaux(String user) {
+    public Result soumissionNiveau(String user) {
 
         String body = request().body().asText();
 
