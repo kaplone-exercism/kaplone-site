@@ -33,7 +33,7 @@ public class ApiNiveaux extends Controller {
 
         String body = request().body().asText();
 
-        String encodedToken = request().getHeader("token");
+        String encodedToken = request().getHeader("monToken");
         byte [] bytes = encodedToken.getBytes();
 
         LoadConfig.loadSettings();
