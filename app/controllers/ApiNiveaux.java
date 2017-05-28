@@ -66,7 +66,7 @@ public class ApiNiveaux extends Controller {
                     }
                 }
 
-                return ok(decrypted.split(" ")[0] + " est un utilisateur valide\n" + body);
+                return ok(decrypted.split(" ")[0] + " est un utilisateur valide\n");
             }
         } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e) {
             // TODO Auto-generated catch block
