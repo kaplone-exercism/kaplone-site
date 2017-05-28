@@ -32,8 +32,6 @@ public class ApiNiveaux extends Controller {
 
     public Result soumissionNiveau() {
 
-        String body = request().body().asText();
-
         String encodedToken = request().getHeader("monToken");
         byte [] bytes = encodedToken.getBytes();
 
@@ -50,7 +48,21 @@ public class ApiNiveaux extends Controller {
 
             if (Settings.getUsers().contains(decrypted.split(" ")[0])) {
 
-                inclureNiveau(body);
+                MultipartFormData<File> body = request().body().asMultipartFormData();
+
+                FilePart<File> picture = body.getFile("picture");
+                if (picture != null) {
+                    String fileName = picture.getFilename();
+                    String contentType = picture.getContentType();
+                    File file = picture.getFile();
+                }
+
+                String bodyText = body.getFile("text").
+                //String bodyText = request().body().asText();
+
+                enregistrerImage(file);
+
+                inclureNiveau(bodyText);
 
                 return ok(decrypted.split(" ")[0] + " est un utilisateur valide\n" + body);
             }
@@ -76,6 +88,18 @@ public class ApiNiveaux extends Controller {
         }catch (IOException ioe){
             ioe.printStackTrace();
         }
+    }
+
+    private void enregistrerImage(File file, String fileName){
+
+        String home =  System.getProperty("user.home");
+
+        File convFile = new File(home + "/captures",filename);
+        convFile.createNewFile();
+        FileOutputStream fos = new FileOutputStream(convFile);
+        fos.write(file.getBytes());
+        fos.close();
+
     }
 
     public Result niveaux(){
