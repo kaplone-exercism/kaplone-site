@@ -50,7 +50,7 @@ public class ApiNiveaux extends Controller {
             if (Settings.getUsers().contains(decrypted.split(" ")[0])) {
                 return ok(decrypted.split(" ")[0] + " est un utilisateur valide");
             }
-        } catch (NoSuchAlgorithmException | InvalidKeyException | IllegalBlockSizeException e) {
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
