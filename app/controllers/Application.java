@@ -15,12 +15,23 @@ public class Application extends Controller {
     
     Connection connection = DB.getConnection();
 
-//    public Result index() {
-//        return ok(index.render("Your new application is ready."));
-//    }
     public Result index() {
-       // return ok("<h3>Serveur is up !</h3>").as("text/html");
-        return ok("Serveur is up !");
+        //return ok("<h3>Serveur is up !</h3>").as("text/html");
+
+        return ok("<!DOCTYPE html>\n" +
+                "<html lang=\"fr\">\n" +
+                "\n" +
+                "<head>\n" +
+                "    <title>Accueil</title>\n" +
+                "</head>\n" +
+                "\n" +
+                "<body>\n" +
+                "<meta charset=\"UTF-8\">\n" +
+                "<div>\n" +
+                "    <img src=\"/assets/images/index.jpg\">\n" +
+                "</div>\n" +
+                "</body>\n" +
+                "</html>").as("text/html");
     }
 
     public Result ajoutScore(String user) {
