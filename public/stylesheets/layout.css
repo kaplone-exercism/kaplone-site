@@ -28,7 +28,6 @@ article#contenu {
 	margin-bottom:20px;
 	border-radius: 5px;
 	background-color:#FFFFFF;
-
 	}
 
 article#includedContent {
@@ -41,6 +40,7 @@ article#includedContent {
 	height:100%;
 	border-radius: 5px;
 	background-color: #f2f2f2;
+	}
 
 footer {
 	clear:both;
