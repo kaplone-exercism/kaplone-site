@@ -39,6 +39,10 @@ p.texte {
               padding: 5px;
 }
 
+div.detail {
+             padding-top: 100px;
+}
+
 
 div.texte {
               border: 1px solid LightGrey;
@@ -46,7 +50,6 @@ div.texte {
               background: White ;
               margin: 5px;
               padding: 5px;
-              clear:both;
 }
 
 div.titre {
@@ -54,8 +57,9 @@ div.titre {
               border-radius: 5px;
               background: BlanchedAlmond ;
               margin: 5px;
-              padding: 5px;
-              clear:both;
+              padding-top: 10px;
+              padding-right: 15px;
+              padding-left: 15px;
 }
 
 p.code, pre.code {
