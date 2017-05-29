@@ -42,8 +42,8 @@ article#includedContent {
 	border-radius: 5px;
 	background: repeating-linear-gradient(
                    135deg,
-                   #d9e6f2  5px,
-                   #ecf2f9  15px
+                   #e6e6e6  5px,
+                   #f2f2f2  15px
                  );
 	}
 
