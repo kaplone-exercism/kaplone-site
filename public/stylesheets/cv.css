@@ -8,16 +8,17 @@ div.contenu {
 }
 
 div.gauche {
-            width: 30%;
+            width: 272px;;
             float:left;
             margin: 5px;
             padding: 5px;
 }
 
 div.droite {
-            width: 25%;
+            width: 200px;
             float: right;
             margin: 5px;
+            margin-right: 40px;
             padding: 5px;
 }
 

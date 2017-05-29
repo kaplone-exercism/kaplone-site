@@ -31,12 +31,10 @@ article#contenu {
 	}
 
 article#includedContent {
-	float:left;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 290px;
 	padding-bottom:20px;
     margin-bottom:20px;
-	width:70%;
+	width:72%;
 	height:100%;
 	border-radius: 5px;
 	background-color: #f2f2f2;
@@ -54,7 +52,7 @@ footer {
 
 aside {
 	float:left;
-	margin-left: 2%;
+	margin-left: 15px;
 	width:20%;
 	height:100%;
 	border-radius: 5px;
