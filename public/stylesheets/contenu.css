@@ -4,6 +4,7 @@ body.contenu {
 
 div.contenu {
             margin: 5px;
+            padding-top: 10px;
             font-size:120%;
 }
 
