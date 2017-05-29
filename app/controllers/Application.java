@@ -25,11 +25,9 @@ public class Application extends Controller {
                 "    <title>Accueil</title>\n" +
                 "</head>\n" +
                 "\n" +
-                "<body>\n" +
+                "<body style=\"background-color:black;\">\n" +
                 "<meta charset=\"UTF-8\">\n" +
-                "<div>\n" +
-                "    <img src=\"/assets/images/index.jpg\">\n" +
-                "</div>\n" +
+                "<img src=\"/assets/images/index.jpg\">\n" +
                 "</body>\n" +
                 "</html>").as("text/html");
     }
