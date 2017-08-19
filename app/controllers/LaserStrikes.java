@@ -57,7 +57,7 @@ public class LaserStrikes extends Controller {
                 System.out.println("Ready ...");
 
                 in.onMessage(a -> System.out.println(a));
-                in.onClose(a -> System.out.println(a));
+                in.onClose(System.out.println("closed !"));
             }
         };
     }
