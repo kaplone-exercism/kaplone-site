@@ -8,6 +8,7 @@ import play.db.*;
 import play.*;
 import play.mvc.*;
 import play.mvc.Http.*;
+import play.libs.F.*;
 
 import views.html.*;
 import models.*;
@@ -57,7 +58,13 @@ public class LaserStrikes extends Controller {
                 System.out.println("Ready ...");
 
                 in.onMessage(a -> System.out.println(a));
-                in.onClose(System.out.println("closed !"));
+                in.onClose(
+                        new CallBack0() {
+                            public void invoke() {
+                                System.out.println("closed !"))
+                            }
+                        }
+                );
             }
         };
     }
