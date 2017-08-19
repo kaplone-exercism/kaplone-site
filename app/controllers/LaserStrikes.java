@@ -16,7 +16,7 @@ import java.util.LinkedList;
 public class LaserStrikes extends Controller {
 
     Connection connection = DB.getConnection();
-    LinkedList<String>;
+    LinkedList<String> fifo;
 
     LaserStrikes() {
         super();
