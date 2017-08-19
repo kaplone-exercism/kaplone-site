@@ -21,9 +21,6 @@ public class LaserStrikes extends Controller {
     LaserStrikes() {
         super();
         this.fifo = new LinkedList<>();
-        this.fifo.add("une");
-        this.fifo.add("deux");
-        this.fifo.add("trois");
     }
 
 
@@ -32,21 +29,17 @@ public class LaserStrikes extends Controller {
 
         String user = body.asText();
 
-        this.fifo.add(user);
+        Strint result = "aucun";
 
-
-
-        return ok(afficheFifo());
-    }
-
-    private String afficheFifo(){
-
-        String result = "";
-
-        while (this.fifo.peek() != null){
-            result += this.fifo.poll() + " <-> ";
+        if (this.fifo.peek() != null){
+            this.fifo.add(user);
+            LaserPair lp = new LaserPair(this.fifo.poll(), this.fifo.poll());
+            result = lp.toString();
+        }
+        else {
+            this.fifo.add(user);
         }
 
-        return result;
+        return ok(result);
     }
 }
