@@ -29,7 +29,7 @@ public class LaserStrikes extends Controller {
 
         String user = body.asText();
 
-        Strint result = "aucun";
+        String result = "aucun";
 
         if (this.fifo.peek() != null){
             this.fifo.add(user);
