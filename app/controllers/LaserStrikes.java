@@ -10,8 +10,10 @@ import play.mvc.*;
 import play.mvc.Http.*;
 
 import views.html.*;
+import models.*;
 
 import java.util.LinkedList;
+
 
 public class LaserStrikes extends Controller {
 
