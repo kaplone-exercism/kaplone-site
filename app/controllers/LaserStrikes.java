@@ -17,10 +17,13 @@ public class LaserStrikes extends Controller {
 
     Connection connection = DB.getConnection();
 
-    LinkedList<String> fifo = new LinkedList<>();
-    fifo.add("une");
-    fifo.add("deux");
-    fifo.add("trois");
+    static {
+        LinkedList<String> fifo = new LinkedList<>();
+        fifo.add("une");
+        fifo.add("deux");
+        fifo.add("trois");
+    }
+
 
     public Result toFifo() {
         RequestBody body = request().body();
@@ -42,6 +45,6 @@ public class LaserStrikes extends Controller {
             result += fifo.poll() + " <-> ";
         }
 
-        return result;3
+        return result;
     }
 }
