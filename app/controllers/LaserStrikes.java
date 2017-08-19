@@ -16,13 +16,14 @@ import java.util.LinkedList;
 public class LaserStrikes extends Controller {
 
     Connection connection = DB.getConnection();
+    LinkedList<String>;
 
     LaserStrikes() {
         super();
-        LinkedList<String> fifo = new LinkedList<>();
-        fifo.add("une");
-        fifo.add("deux");
-        fifo.add("trois");
+        this.fifo = new LinkedList<>();
+        this.fifo.add("une");
+        this.fifo.add("deux");
+        this.fifo.add("trois");
     }
 
 
@@ -31,7 +32,7 @@ public class LaserStrikes extends Controller {
 
         String user = body.asText();
 
-        fifo.add(user);
+        this.fifo.add(user);
 
 
 
@@ -42,8 +43,8 @@ public class LaserStrikes extends Controller {
 
         String result = "";
 
-        while (fifo.peek() != null){
-            result += fifo.poll() + " <-> ";
+        while (this.fifo.peek() != null){
+            result += this.fifo.poll() + " <-> ";
         }
 
         return result;
