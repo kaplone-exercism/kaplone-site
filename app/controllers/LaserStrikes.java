@@ -17,7 +17,12 @@ public class LaserStrikes extends Controller {
 
     public Result toFifo() {
         RequestBody body = request().body();
-        String user = request().headers().get(Http.HeaderNames.USER_AGENT);
+
+        String user = "aucun";
+
+        if (request().headers().get(Http.HeaderNames.CANDIDAT).length > 0){
+            user = request().headers().get(Http.HeaderNames.CANDIDAT)[0];
+        }
 
         return ok(user);
     }
