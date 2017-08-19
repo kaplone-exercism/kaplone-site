@@ -15,11 +15,31 @@ public class LaserStrikes extends Controller {
 
     Connection connection = DB.getConnection();
 
+    LinkedList<String> fifo = new LinkedList<>();
+    fifo.add("une");
+    fifo.add("deux");
+    fifo.add("trois");
+
     public Result toFifo() {
         RequestBody body = request().body();
 
         String user = body.asText();
 
-        return ok(user);
+        fifo.add(user);
+
+
+
+        return ok(afficheFifo());
+    }
+
+    private String afficheFifo(){
+
+        String result = "";
+
+        while (fifo.peek() != null){
+            result += fifo.poll() + " <-> ";
+        }
+
+        return result;
     }
 }
