@@ -61,7 +61,7 @@ public class LaserStrikes extends Controller {
                 in.onClose(
                         new CallBack0() {
                             public void invoke() {
-                                System.out.println("closed !"))
+                                System.out.println("closed !"));
                             }
                         }
                 );
