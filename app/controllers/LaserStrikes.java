@@ -58,13 +58,14 @@ public class LaserStrikes extends Controller {
                 System.out.println("Ready ...");
 
                 in.onMessage(a -> System.out.println(a));
-                in.onClose(
-                        new CallBack0() {
-                            public void invoke() {
-                                System.out.println("closed !");
-                            }
-                        }
-                );
+
+//                in.onClose(
+//                        new CallBack0() {
+//                            public void invoke() {
+//                                System.out.println("closed !");
+//                            }
+//                        }
+//                );
             }
         };
     }
