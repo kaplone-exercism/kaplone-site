@@ -8,5 +8,8 @@ POST    /score                           controllers.ApiScore.soumissionScore(us
 POST    /ajout                           controllers.ApiNiveaux.soumissionNiveau()
 GET     /niveaux                         controllers.ApiNiveaux.niveaux()
 
+#switch to games routes
+->  /games games.Routes
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
