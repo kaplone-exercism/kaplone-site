@@ -17,7 +17,8 @@ public class LaserStrikes extends Controller {
 
     Connection connection = DB.getConnection();
 
-    static {
+    LaserStrikes() {
+        super();
         LinkedList<String> fifo = new LinkedList<>();
         fifo.add("une");
         fifo.add("deux");
