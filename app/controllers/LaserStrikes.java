@@ -11,6 +11,8 @@ import play.mvc.Http.*;
 
 import views.html.*;
 
+import java.util.LinkedList;
+
 public class LaserStrikes extends Controller {
 
     Connection connection = DB.getConnection();
@@ -40,6 +42,6 @@ public class LaserStrikes extends Controller {
             result += fifo.poll() + " <-> ";
         }
 
-        return result;
+        return result;3
     }
 }
