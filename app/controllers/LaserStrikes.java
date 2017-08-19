@@ -31,7 +31,7 @@ public class LaserStrikes extends Controller {
 
         String user = body.asText();
 
-        String result = "aucun";
+        String result = "En attente d'un deuxième candidat pour le duel ...";
 
         if (this.fifo.peek() != null){
             this.fifo.add(user);
