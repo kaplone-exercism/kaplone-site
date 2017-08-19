@@ -12,6 +12,9 @@ import play.mvc.Http.*;
 import views.html.*;
 import models.*;
 
+
+import javax.websocket.*;
+
 import java.util.LinkedList;
 
 
@@ -19,6 +22,7 @@ public class LaserStrikes extends Controller {
 
     Connection connection = DB.getConnection();
     LinkedList<String> fifo;
+    LaserPair lp;
 
     LaserStrikes() {
         super();
@@ -35,7 +39,7 @@ public class LaserStrikes extends Controller {
 
         if (this.fifo.peek() != null){
             this.fifo.add(user);
-            LaserPair lp = new LaserPair(this.fifo.poll(), this.fifo.poll());
+            lp = new LaserPair(this.fifo.poll(), this.fifo.poll());
             result = lp.toString();
         }
         else {
@@ -43,5 +47,18 @@ public class LaserStrikes extends Controller {
         }
 
         return ok(result);
+    }
+
+    public WebSocket<String> toFifoSocket() {
+
+        return new WebSocket<String>() {
+            public void onReady(final Websocket.In<String> in, final WebSocket.Out<String> out){
+
+                System.out.println("Ready ...");
+
+                in.onMessage(a -> System.out.println(a));
+                in.onClose(a -> System.out.println(a));
+            }
+        };
     }
 }
