@@ -52,7 +52,7 @@ public class LaserStrikes extends Controller {
     public WebSocket<String> toFifoSocket() {
 
         return new WebSocket<String>() {
-            public void onReady(final Websocket.In<String> in, final WebSocket.Out<String> out){
+            public void onReady(final WebSocket.In<String> in, final WebSocket.Out<String> out){
 
                 System.out.println("Ready ...");
 
