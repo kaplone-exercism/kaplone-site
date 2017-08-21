@@ -51,12 +51,12 @@ public class LaserStrikes extends Controller {
                     requestHandler.start();
                     System.out.println("!!! requestHandler lancé !!!");
                 }
-                catch (IOException ioe){
-                    System.out.println("!!! erreur au serverSocket.accept() !!!");
-                    ioe.printStackTrace();
-                }
+
                 catch (SocketException se) {
                     System.out.println("!!! erreur aSocketException !!!");
+                }
+                catch (IOException ioe){
+                    System.out.println("!!! erreur au serverSocket.accept() !!!");
                 }
             }
         }
