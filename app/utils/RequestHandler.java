@@ -23,7 +23,7 @@ public class RequestHandler extends Thread{
 	 * Constructeur canonique
 	 * @param socket le socket à écouter
 	 */
-	RequestHandler( Socket socket )	{
+	public RequestHandler( Socket socket )	{
 		this.socket = socket;
 	}
 
