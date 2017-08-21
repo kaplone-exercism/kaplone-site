@@ -56,13 +56,15 @@ public class LaserStrikes extends Controller {
         return ok(result);
     }
 
-    public void toFifoSocket() {
+    public Result toFifoSocket() {
 
         while(Server.isListeningSocket){
             Socket clientSocket = serverSocket.accept();
             RequestHandler requestHandler = new RequestHandler(clientSocket);
             requestHandler.start();
         }
+
+        return ok(" -> socket");
 
    }
 }
