@@ -17,6 +17,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 
 import java.util.LinkedList;
 
@@ -53,6 +54,9 @@ public class LaserStrikes extends Controller {
                 catch (IOException ioe){
                     System.out.println("!!! erreur au serverSocket.accept() !!!");
                     ioe.printStackTrace();
+                }
+                catch (SocketException se) {
+                    System.out.println("!!! erreur aSocketException !!!");
                 }
             }
         }
