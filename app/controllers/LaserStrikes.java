@@ -43,7 +43,7 @@ public class LaserStrikes extends Controller {
 
             while(Server.isListeningSocket()){
 
-                System.out.println("--> entre dans la boucle while ...");
+               // System.out.println("--> entre dans la boucle while ...");
                 try {
                     Socket clientSocket = serverSocket.accept();
                     RequestHandler requestHandler = new RequestHandler(clientSocket);
