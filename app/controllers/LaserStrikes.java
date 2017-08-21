@@ -39,8 +39,10 @@ public class LaserStrikes extends Controller {
         try {
             Server.listen(9021);
             serverSocket = Server.getServerSocket();
+            System.out.println("!!! socketServer lancé !!!");
         }
         catch (IOException ioe){
+            System.out.println("!!! erreur au lancement du socketServer !!!");
             ioe.printStackTrace();
         }
 
@@ -74,8 +76,10 @@ public class LaserStrikes extends Controller {
                 Socket clientSocket = serverSocket.accept();
                 RequestHandler requestHandler = new RequestHandler(clientSocket);
                 requestHandler.start();
+                System.out.println("!!! requestHandler lancé !!!");
             }
             catch (IOException ioe){
+                System.out.println("!!! erreur au serverSocket.accept() !!!");
                 ioe.printStackTrace();
             }
         }
