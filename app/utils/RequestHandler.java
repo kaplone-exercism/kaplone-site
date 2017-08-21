@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 /**
  * Ecouteur du socket coté serveur.
  */
-class RequestHandler extends Thread{
+public class RequestHandler extends Thread{
 
 	private Socket socket;
 
