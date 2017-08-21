@@ -15,6 +15,7 @@ import models.*;
 
 
 import javax.websocket.*;
+import javax.websocket.server.ServerEndpoint;
 
 import java.util.LinkedList;
 
@@ -25,9 +26,14 @@ public class LaserStrikes extends Controller {
     LinkedList<String> fifo;
     LaserPair lp;
 
+    ServerSocket serverSocket;
+
     LaserStrikes() {
         super();
         this.fifo = new LinkedList<>();
+        Server.setListening(true);
+        Server.listen(9021);
+        serverSocket = Server.getServerSocket();
     }
 
 
@@ -50,23 +56,13 @@ public class LaserStrikes extends Controller {
         return ok(result);
     }
 
-    public WebSocket<String> toFifoSocket() {
+    public void toFifoSocket() {
 
-        return new WebSocket<String>() {
-            public void onReady(final WebSocket.In<String> in, final WebSocket.Out<String> out){
+        while(Server.isListeningSocket){
+            Socket clientSocket = serverSocket.accept();
+            RequestHandler requestHandler = new RequestHandler(clientSocket);
+            requestHandler.start();
+        }
 
-                System.out.println("Ready ...");
-
-                in.onMessage(a -> System.out.println(a));
-
-//                in.onClose(
-//                        new CallBack0() {
-//                            public void invoke() {
-//                                System.out.println("closed !");
-//                            }
-//                        }
-//                );
-            }
-        };
-    }
+   }
 }
