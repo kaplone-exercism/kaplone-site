@@ -35,7 +35,7 @@ public class LaserStrikes extends Controller {
     LaserStrikes() {
         super();
         this.fifo = new LinkedList<>();
-        Server.setListening(true);
+        Server.setListeningSocket(true);
         Server.listen(9021);
         serverSocket = Server.getServerSocket();
     }
