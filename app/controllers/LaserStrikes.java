@@ -37,33 +37,44 @@ public class LaserStrikes extends Controller {
         super();
         this.fifo = new LinkedList<>();
         Server.setListeningSocket(true);
-        try {
-            Server.listen(9021);
-            serverSocket = Server.getServerSocket();
-            System.out.println("!!! socketServer lancé !!!");
 
-            while(Server.isListeningSocket()){
-
-               // System.out.println("--> entre dans la boucle while ...");
+        Thread t = new Thread(new Runnable(){
+            @Override
+            public void run(){
                 try {
-                    Socket clientSocket = serverSocket.accept();
-                    RequestHandler requestHandler = new RequestHandler(clientSocket);
-                    requestHandler.start();
-                    System.out.println("!!! requestHandler lancé !!!");
-                }
+                    Server.listen(9021);
+                    serverSocket = Server.getServerSocket();
+                    System.out.println("!!! socketServer lancé !!!");
 
-                catch (SocketException se) {
-                    System.out.println("!!! erreur aSocketException !!!");
+
+
+                    while(Server.isListeningSocket()){
+
+                        // System.out.println("--> entre dans la boucle while ...");
+                        try {
+                            Socket clientSocket = serverSocket.accept();
+                            RequestHandler requestHandler = new RequestHandler(clientSocket);
+                            requestHandler.start();
+                            System.out.println("!!! requestHandler lancé !!!");
+                        }
+
+                        catch (SocketException se) {
+                            System.out.println("!!! erreur aSocketException !!!");
+                        }
+                        catch (IOException ioe){
+                            System.out.println("!!! erreur au serverSocket.accept() !!!");
+                        }
+                    }
                 }
                 catch (IOException ioe){
-                    System.out.println("!!! erreur au serverSocket.accept() !!!");
+                    System.out.println("!!! erreur au lancement du socketServer !!!");
+                    ioe.printStackTrace();
                 }
             }
-        }
-        catch (IOException ioe){
-            System.out.println("!!! erreur au lancement du socketServer !!!");
-            ioe.printStackTrace();
-        }
+
+        });
+
+        t.start();
 
 
     }
