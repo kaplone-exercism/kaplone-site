@@ -40,6 +40,21 @@ public class LaserStrikes extends Controller {
             Server.listen(9021);
             serverSocket = Server.getServerSocket();
             System.out.println("!!! socketServer lancé !!!");
+
+            while(Server.isListeningSocket()){
+
+                System.out.println("--> entre dans la boucle while ...");
+                try {
+                    Socket clientSocket = serverSocket.accept();
+                    RequestHandler requestHandler = new RequestHandler(clientSocket);
+                    requestHandler.start();
+                    System.out.println("!!! requestHandler lancé !!!");
+                }
+                catch (IOException ioe){
+                    System.out.println("!!! erreur au serverSocket.accept() !!!");
+                    ioe.printStackTrace();
+                }
+            }
         }
         catch (IOException ioe){
             System.out.println("!!! erreur au lancement du socketServer !!!");
@@ -71,18 +86,7 @@ public class LaserStrikes extends Controller {
 
     public Result toFifoSocket() {
 
-        while(Server.isListeningSocket()){
-            try {
-                Socket clientSocket = serverSocket.accept();
-                RequestHandler requestHandler = new RequestHandler(clientSocket);
-                requestHandler.start();
-                System.out.println("!!! requestHandler lancé !!!");
-            }
-            catch (IOException ioe){
-                System.out.println("!!! erreur au serverSocket.accept() !!!");
-                ioe.printStackTrace();
-            }
-        }
+        System.out.println("--> entre dans toFifoSocket");
 
         return ok(" -> socket");
 
