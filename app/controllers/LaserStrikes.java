@@ -70,9 +70,14 @@ public class LaserStrikes extends Controller {
     public Result toFifoSocket() {
 
         while(Server.isListeningSocket()){
-            Socket clientSocket = serverSocket.accept();
-            RequestHandler requestHandler = new RequestHandler(clientSocket);
-            requestHandler.start();
+            try {
+                Socket clientSocket = serverSocket.accept();
+                RequestHandler requestHandler = new RequestHandler(clientSocket);
+                requestHandler.start();
+            }
+            catch (IOException ioe){
+                ioe.printStackTrace();
+            }
         }
 
         return ok(" -> socket");
