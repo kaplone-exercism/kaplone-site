@@ -61,7 +61,7 @@ class RequestHandler extends Thread{
 				switch (code){
 
 				case "00" :
-					String retour "Valeur retournée = ...";
+					String retour = "Valeur retournée = ...";
 
 					out.write(retour);
 					out.newLine();
