@@ -15,11 +15,12 @@ public class Server {
         try {
             serverSocket = new ServerSocket(port);
             listeningSocket = true;
+            System.out.println("listen on port: 9021");
         } catch (IOException e) {
             System.err.println("Could not listen on port: 9021");
         }
 
-        serverSocket.close();       
+        //serverSocket.close();
     }
 
     public static boolean isListeningSocket(){
