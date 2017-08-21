@@ -31,7 +31,7 @@ public class Server {
     }
 
     public static ServerSocket getServerSocket(){
-        return ServerSocket;
+        return serverSocket;
     }
 
 }
