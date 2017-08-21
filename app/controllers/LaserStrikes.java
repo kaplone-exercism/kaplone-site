@@ -36,8 +36,15 @@ public class LaserStrikes extends Controller {
         super();
         this.fifo = new LinkedList<>();
         Server.setListeningSocket(true);
-        Server.listen(9021);
-        serverSocket = Server.getServerSocket();
+        try {
+            Server.listen(9021);
+            serverSocket = Server.getServerSocket();
+        }
+        catch (IOException ioe){
+            ioe.printStackTrace();
+        }
+
+
     }
 
 
